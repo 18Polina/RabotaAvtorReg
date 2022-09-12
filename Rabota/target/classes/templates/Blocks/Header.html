@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<div>
+  <header class="p-3 text-bg-dark">
+    <div class="container">
+        <a href="/Teach" ></a>
+      <a href="/"></a>
+ <a style="color: #6E00EB" href="/Teach"  class="nav-link px-2 text-white">Преподаватель</a><br>
+<a style="color: #6E00EB"  href="/" class="nav-link px-2 text-white">Студенты</a>
+
+      </div>
+
+      <div class="col-md-3 text-end">
+          <form th:action="@{/logout}" method="post">
+              <input style="color: #6E00EB;text-align: center;margin-bottom: 20px;height: 20px;width: 150px" size="25" type="submit" value="Выйти" class="btn btn-primary">
+          </form>
+      </div>
+  </header>
+</div>
+
+
+</body>
+</html>

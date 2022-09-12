@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ПРАКТИЧЕСКАЯ РАБОТА</title>
+</head>
+<body style="background:#D7C9EB ">
+<h1 style="text-align: center;color: cornflowerblue" > Редактировать преподавателя</h1>
+    <form  th:action = "@{/Teacher/{id}/edit(id=${teacher.id})}" method="post" th:object="${teacher}" >
+    <label> Фамилия преподавателя</label>
+    <input  th:field="*{surname}" th:value="${teacher.getSurname()}"  style="text-align: center;margin-bottom: 20px"  type="text" name="surname" >
+    <div style="color: black" th:if="${#fields.hasErrors('surname')}" th:errors="*{surname}"></div><br>
+
+    <label> Имя преподавателя</label>
+    <input  th:field="*{name}" th:value="${teacher.getName()}" style="text-align: center;margin-bottom: 20px"   type="text" name="name" >
+    <div style="color: black" th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></div><br>
+
+    <label> Отчество преподавателя</label>
+    <input  th:field="*{middlename}" th:value="${teacher.getMiddlename()}" style="text-align: center;margin-bottom: 20px"   type="text" name="middlename" >
+    <div style="color: black" th:if="${#fields.hasErrors('middlename')}" th:errors="*{middlename}"></div><br>
+
+    <label> Дата рождения</label>
+    <input th:field="*{bthday}" th:value="${teacher.getBthday()}" style="text-align: center;margin-bottom: 20px"   type="date" name="bthday" >
+    <div style="color: black" th:if="${#fields.hasErrors('bthday')}" th:errors="*{bthday}"></div><br>
+
+    <label> Год начала преподавания</label>
+    <input  th:field="*{yearprepodav}" th:value="${teacher.getYearprepodav()}" style="text-align: center;margin-bottom: 20px"  maxlength="4"  type="text" name="yearprepodav" >
+    <div style="color: black" th:if="${#fields.hasErrors('yearprepodav')}" th:errors="*{yearprepodav}"></div><br>
+        <button style="color: blueviolet;height: 20px;width: 150px" type="submit">Сохранить изменения</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,21 @@
+  <!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+  <title>ПРАКТИЧЕСКАЯ РАБОТА </title>
+</head>
+<body style="background:#D7C9EB ">
+<div th:if="${param.error}">
+  Неверное имя пользователя или пароль
+</div>
+<div th:if="${param.logout}">
+  Авторизация пользователя:
+</div>
+<form th:action="@{/login}" method="post">
+  <div><label> Логин : <input  style="text-align: center;margin-bottom: 20px" size="25" type="text" name="username"/> </label></div>
+  <div><label> Пароль: <input  style="text-align: center;margin-bottom: 20px" size="25" type="password" name="password"/> </label></div>
+  <div><input style="color: #6E00EB; height: 20px;width: 150px" type ="submit" value="Вход"/></div>
+</form>
+<a href="/registration">Регистрация нового пользователя</a>
+</body>
+</html>

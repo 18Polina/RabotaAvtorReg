@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ПРАКТИЧЕСКАЯ РАБОТА</title>
+</head>
+<body style="background:#D7C9EB ">
+<h2 style="text-align: center;color: cornflowerblue" >Поиск преподавателя</h2>
+<form method="post" th:action="${'/Search/Teacher-result'}">
+  <input  type="text" name="surname"><br>
+  <button  style="text-align: center;margin-bottom: 20px;color: blueviolet;height: 20px;width: 150px" type="submit">Точное сопадение</button>
+</form>
+<form method="post" th:action="${'/Search/Teacher'}">
+  <input type="text" name="surname"><br>
+  <button style="color: blueviolet;height: 20px;width: 150px" type="submit">Не точное сопадение</button>
+</form>
+  <div th:each="el : ${result}">
+    <h3 th:text="${el.getSurname()}" ></h3>
+    <p th:text="${el.getName()}"></p>
+    <p th:text="${el.getMiddlename()}"></p>
+    <p th:text="${el.getBthday()}"></p>
+    <p th:text="${el.getYearprepodav()}"></p>
+  </div>
+</body>
+</html>

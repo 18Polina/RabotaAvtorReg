@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ПРАКТИЧЕСКАЯ РАБОТА</title>
+</head>
+<body style="background:#D7C9EB ">
+<div th:insert="Blocks/Header"></div>
+<h1 style="text-align: center;color: cornflowerblue" >Студенты</h1>
+<div>
+    <a style="color: #6E00EB"  href="/Search/Student"> Поиск студента</a></div>
+<div>
+    <a style="color: #6E00EB"  href="/Add/Student"> Добавить студента</a></div>
+<table>
+<div th:each="el : ${students}">
+    <h3  th:text="${el.getLastname()}" ></h3>
+    <p th:text="${el.getName()}"></p>
+    <p th:text="${el.getMiddlename()}"></p>
+    <p th:text="${el.getBirthday()}"></p>
+    <p th:text="${el.getGroupp()}"></p>
+    <a style="color: #6E00EB"  th:href="'/Stud/' + ${el.id}"> Личная информация студента </a>
+</div>
+</table>
+</body>
+</html>

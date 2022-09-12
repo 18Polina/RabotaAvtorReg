@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+  <title>ПРАКТИЧЕСКАЯ РАБОТА</title>
+</head>
+<body style="background:#D7C9EB ">
+<div th:each="el : ${teacher}">
+  <h3 style="text-align: center;color: cornflowerblue">Личная информация преподавателя: </h3>
+  <h3 style="text-align: center" th:text="${el.getSurname()}" ></h3>
+  <p style="text-align: center" th:text="${el.getName()}"></p>
+  <p style="text-align: center" th:text="${el.getMiddlename()}"></p>
+  <p style="text-align: center" th:text="${el.getBthday()}"></p>
+  <p style="text-align: center" th:text="${el.getYearprepodav()}"></p>
+  <a  th:href="'/Teacher/' + ${el.id} + '/edit'">Редактировать</a>
+  <form th:action="'/Teacher/' + ${el.id} + '/remove'" method="post">
+    <button style="color: blueviolet;height: 20px;width: 150px" type="submit" class="btn btn-del">Удалить</button>
+  </form>
+</div>
+</body>
+</html>
